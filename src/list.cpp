@@ -7,7 +7,7 @@ void List::print_menu() {
     cout << " 1 - Print list.\n";
     cout << " 2 - Add to list.\n";
     cout << " 3 - Delete from list.\n";
-    cout << " 4 - Qute.\n";
+    cout << " 4 - Quit.\n";
     cout << " Enter your choice and press return: ";
     cin >> choice;
 
@@ -51,13 +51,13 @@ void List::delete_item() {
         for(int i = 0; i < (int)list.size(); ++i) {
             cout << i << ": " << list[i] << "\n";
         }
+
+        int choiceNum;
+        cin >> choiceNum;
+        list.erase(list.begin()+choiceNum);
     } else {
         cout << "No items to delete.\n";
     }
-
-    int choice;
-    cin >> choice;
-    if(choice < (int)list.size() || choice >= 0) 
 
     print_menu();
 }
